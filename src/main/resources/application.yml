@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: E_PLANT_SHOP_BACKEND
+  profiles:
+    active: ${ENV:nsk}
