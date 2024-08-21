@@ -1,36 +1,16 @@
-package com.plant_eshop_backend.entity;
+package com.plant_eshop_backend.dto;
 
-import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
-@Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "userdetails_tb")
-public class UserDetails {
-
-    @Id
+public class UserDetailsDto {
     private String userDetailsId;
-
     private String userFirstName;
-
     private String userLastName;
-
     private String country;
-
     private String state;
-
     private String city;
-
     private String pincode;
-
     private String userAddress;
-
-
     private String userMobile;
-
-//    @CreationTimestamp
-//    private LocalDateTime createdTime;
-
 }
