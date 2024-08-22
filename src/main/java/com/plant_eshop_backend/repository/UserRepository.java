@@ -13,7 +13,10 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User,String> {
 
-    @Query(value = "SELECT * FROM user_tb WHERE user_id = :userId", nativeQuery = true)
-    User findByUserId(@Param("userId") String userId);
+    @Query("Select u from User u where u.userEmail=:email and u.userPassword=:pwd")
+     User checkUser(@Param("email")String email, @Param("pwd")String pass);
+
+//    @Query("select u from User u where u.userId = :userId")
+//    User findByUserId(@Param("userId") String userId);
 
 }

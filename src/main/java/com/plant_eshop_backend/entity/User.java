@@ -1,11 +1,7 @@
 package com.plant_eshop_backend.entity;
 
-import com.plant_eshop_backend.util.EntityIdGenerator;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 import jakarta.persistence.*;
