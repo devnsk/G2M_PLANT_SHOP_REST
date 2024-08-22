@@ -10,7 +10,7 @@ import kong.unirest.UnirestException;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
-	 private static final String API_KEY = "47c7993d7c3240e5616d289fd94b41db-911539ec-67f79eb9";
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
