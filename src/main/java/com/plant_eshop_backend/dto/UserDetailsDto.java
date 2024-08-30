@@ -1,10 +1,11 @@
 package com.plant_eshop_backend.dto;
 
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class UserDetailsDto {
     private String userDetailsId;
     private String userFirstName;

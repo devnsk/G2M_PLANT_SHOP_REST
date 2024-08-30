@@ -1,11 +1,12 @@
 package com.plant_eshop_backend.controller;
+
 import com.plant_eshop_backend.dto.UserDto;
+import com.plant_eshop_backend.entity.Product;
 import com.plant_eshop_backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
@@ -38,5 +39,12 @@ public class UserController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostMapping("/product")
+    private String ss(@RequestBody Product product){
+        System.out.println(product);
+        System.out.println("2nd");
+        return "hekk";
     }
 }
