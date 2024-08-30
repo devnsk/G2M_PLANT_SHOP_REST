@@ -1,20 +1,14 @@
 package com.plant_eshop_backend.service.impl;
 
 import com.plant_eshop_backend.Exception.ResourceNotFound;
-import com.plant_eshop_backend.dto.UserDetailsDto;
-import com.plant_eshop_backend.dto.UserDto;
-import com.plant_eshop_backend.dto.UserResponse;
-import com.plant_eshop_backend.entity.Role;
-import com.plant_eshop_backend.entity.User;
-import com.plant_eshop_backend.entity.UserDetails;
-import com.plant_eshop_backend.repository.RoleRepository;
-import com.plant_eshop_backend.repository.UserRepository;
+import com.plant_eshop_backend.dto.*;
+import com.plant_eshop_backend.entity.*;
+import com.plant_eshop_backend.repository.*;
 import com.plant_eshop_backend.service.UserService;
-import com.plant_eshop_backend.util.EntityIdGenerator;
+import com.plant_eshop_backend.util.UserEntityIdGenerator;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -28,7 +22,7 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Autowired
-    private EntityIdGenerator entityIdGenerator;
+    private UserEntityIdGenerator userEntityIdGenerator;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -38,7 +32,7 @@ public class UserServiceImpl implements UserService {
         User user= userRepository.checkUser(email,Password);
         return user != null
                 ? new UserResponse("login Successfully", true, HttpStatus.ACCEPTED, user)
-                : new UserResponse("login failed", false, HttpStatus.NOT_FOUND, null);
+                : new UserResponse("login failed", false, HttpStatus.NOT_FOUND, new User());
     }
 
     @Override
@@ -47,7 +41,7 @@ public class UserServiceImpl implements UserService {
         UserDetails userEntity1= modelMapper.map(userdto, UserDetails.class);
         System.out.println("saveModel mapper method called");
         String r = userdto.getRole();
-        String id=entityIdGenerator.generateStringId(r);
+        String id=userEntityIdGenerator.generateUserCustomId(r);
         Role role= roleRepository.getRoleName(r);
         userEntity.setUserId(id);
         userEntity1.setUserDetailsId(id);

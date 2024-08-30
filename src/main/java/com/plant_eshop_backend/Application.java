@@ -1,5 +1,7 @@
 package com.plant_eshop_backend;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +15,7 @@ public class Application implements CommandLineRunner {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
+
 	}
 	public static kong.unirest.JsonNode sendSimpleMessage() throws UnirestException {
 //  		kong.unirest.HttpResponse<kong.unirest.JsonNode> request = Unirest.post("https://api.mailgun.net/v3/sandbox7b659fe2b51040be8a7e011dcc9ae75b.mailgun.org/messages")

@@ -1,20 +1,11 @@
 package com.plant_eshop_backend.controller;
 
-import com.plant_eshop_backend.dto.UserDetailsDto;
-import com.plant_eshop_backend.dto.UserDto;
+
 import com.plant_eshop_backend.dto.UserResponse;
-import com.plant_eshop_backend.entity.Role;
-import com.plant_eshop_backend.entity.User;
-import com.plant_eshop_backend.entity.UserDetails;
-import com.plant_eshop_backend.repository.UserRepository;
 import com.plant_eshop_backend.service.UserService;
-import com.plant_eshop_backend.util.EntityIdGenerator;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.Transient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
