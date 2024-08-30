@@ -3,7 +3,8 @@ package com.plant_eshop_backend.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class ColorDto {
     private String colorId;
 
